@@ -18,10 +18,10 @@ function App() {
   );
 }
 
-let AppEntryPoint = App;
+const AppEntryPoint = require("./.ondevice").default;
 
-if (process.env.STORYBOOK_ENABLED) {
-  AppEntryPoint = require("./.ondevice").default;
-}
+// if (true) {
+//   AppEntryPoint = require("./.ondevice").default;
+// }
 
 export default AppEntryPoint;

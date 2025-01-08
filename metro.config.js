@@ -20,7 +20,7 @@ const config = {
       );
 
       if (
-        process.env.STORYBOOK_ENABLED !== "true" &&
+        false &&
         defaultResolveResult?.filePath?.includes?.(".ondevice/")
       ) {
         return {
@@ -36,6 +36,6 @@ const config = {
 const finalConfig = mergeConfig(defaultConfig, config);
 
 module.exports = withStorybook(finalConfig, {
-    enabled: process.env.STORYBOOK_ENABLED === 'true',
+    enabled: true,
     configPath: path.resolve(__dirname, './.ondevice'),
 });

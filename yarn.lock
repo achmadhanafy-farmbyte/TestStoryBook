@@ -4212,7 +4212,6 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     babel-jest: ^29.6.3
     babel-loader: ^8.2.4
-    babel-plugin-react-docgen-typescript: ^1.5.1
     babel-plugin-react-native-web: ^0.19.12
     babel-plugin-transform-inline-environment-variables: ^0.4.4
     cross-env: ^7.0.3
@@ -4220,6 +4219,7 @@ __metadata:
     jest: ^29.6.3
     prettier: 2.8.8
     react: 18.3.1
+    react-docgen-typescript: ^2.0.0
     react-dom: ^18.3.1
     react-native: 0.75.3
     react-native-gesture-handler: ~2.16.1
@@ -4775,17 +4775,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.4.0 || ^8.0.0-0 <8.0.0
   checksum: 150233571072b6b3dfe946242da39cba8587b7f908d1c006f7545fc88b0e3c3018d445739beb61e7a75835f0c2751dbe884a94ff9b245ec42369d9267e0e1b3f
-  languageName: node
-  linkType: hard
-
-"babel-plugin-react-docgen-typescript@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "babel-plugin-react-docgen-typescript@npm:1.5.1"
-  dependencies:
-    react-docgen-typescript: ^1.20.4
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 2469a5236a002b013a7ac73e13500eb67131a3b9ce7fc6ef252aa3df7a8280cc375f0670f18db0a7571acc52c6a8fd809a06da1ceb6253c4f474b38a7bf78ff0
   languageName: node
   linkType: hard
 
@@ -10898,16 +10887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^1.20.4":
-  version: 1.22.0
-  resolution: "react-docgen-typescript@npm:1.22.0"
-  peerDependencies:
-    typescript: ">= 3.x"
-  checksum: f5e5519cf3f1136b8e66bb3c459e02edf4d6c0d3bc1ee0fa848c8446f93f5332fb67c794f36e3597fd7374dea7433243537a4fd2b9311aa5d0c5a844ab8cb980
-  languageName: node
-  linkType: hard
-
-"react-docgen-typescript@npm:^2.2.2":
+"react-docgen-typescript@npm:^2.0.0, react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
   peerDependencies:
