@@ -1,22 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  configureReanimatedLogger,
+  ReanimatedLogLevel,
+} from 'react-native-reanimated';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+// This is the default configuration rn reanimated
+configureReanimatedLogger({
+  level: ReanimatedLogLevel.warn,
+  strict: false
 });
-
-function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
 
 const AppEntryPoint = require("./.ondevice").default;
 
