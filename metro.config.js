@@ -19,15 +19,6 @@ const config = {
         platform
       );
 
-      if (
-        false &&
-        defaultResolveResult?.filePath?.includes?.(".ondevice/")
-      ) {
-        return {
-          type: "empty",
-        };
-      }
-
       return defaultResolveResult;
     },
   },
@@ -36,6 +27,6 @@ const config = {
 const finalConfig = mergeConfig(defaultConfig, config);
 
 module.exports = withStorybook(finalConfig, {
-    enabled: true,
-    configPath: path.resolve(__dirname, './.ondevice'),
+  enabled: true,
+  configPath: path.resolve(__dirname, './.ondevice'),
 });
