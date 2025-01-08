@@ -3,10 +3,18 @@ import {StoryFn} from '@storybook/react';
 import Button from '../../lib/components/Button/Button';
 import {View} from 'react-native';
 import {ButtonProps} from '../../lib/interface/button.interface';
+import { action } from '@storybook/addon-actions';
 
 export default {
   component: Button,
   title: 'Button/Button',
+  parameters: {
+    notes: `
+     ### Button
+     
+     Button documentation here.
+    `,
+  },
   decorators: [
     (Story: StoryFn) => (
       <View style={{padding: 8, flex: 1}}>
@@ -14,8 +22,8 @@ export default {
       </View>
     ),
   ],
-  argTypes: {
-    onPress: {action: 'onPress'},
+  args: {
+    onPress: action('onPress'),
   },
 };
 
