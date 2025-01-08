@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Animated, Dimensions, StyleSheet, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Animated, Dimensions, StyleSheet, View } from 'react-native';
 import {
   TouchableOpacity,
   Text,
@@ -46,6 +46,18 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const [animatedIsFocused] = useState(new Animated.Value(title ? 1 : 0));
 
+  const borderRounded = rounded
+    ? {
+      borderWidth: 1,
+      borderColor: COLORS.grayscale._300,
+      borderRadius: roundedRadius,
+      paddingHorizontal: SPACING.space_16,
+      paddingVertical,
+    }
+    : underLine
+      ? { borderBottomWidth: 1, borderBottomColor: '#E3E3E3' }
+      : {};
+
   /**
    * Label style with animated
    */
@@ -54,8 +66,8 @@ const Button: React.FC<ButtonProps> = ({
     left: rounded
       ? SPACING.space_16
       : paddingHorizontal
-      ? paddingHorizontal
-      : 0,
+        ? paddingHorizontal
+        : 0,
     right: 16,
     top: animatedIsFocused.interpolate({
       inputRange: [0, 1],
@@ -94,7 +106,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <TouchableOpacity
         style={[
-          {backgroundColor, paddingHorizontal, paddingVertical, borderRadius},
+          { backgroundColor, paddingHorizontal, paddingVertical, borderRadius },
         ]}
         {...rest}>
         {icon}
@@ -104,7 +116,7 @@ const Button: React.FC<ButtonProps> = ({
   if (variant === 'icon-text') {
     return (
       <TouchableOpacity
-        style={[{flexDirection: 'row', alignItems: 'center'}]}
+        style={[{ flexDirection: 'row', alignItems: 'center' }]}
         {...rest}>
         {iconLeft}
         {iconLeft && <Spacer width={iconSpacing} flexGrow={iconFlexGrow} />}
@@ -120,24 +132,13 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
   if (variant === 'light-text') {
-    const borderRounded = rounded
-      ? {
-          borderWidth: 1,
-          borderColor: COLORS.grayscale._300,
-          borderRadius: roundedRadius,
-          paddingHorizontal: SPACING.space_16,
-          paddingVertical,
-        }
-      : underLine
-      ? {borderBottomWidth: 1, borderBottomColor: '#E3E3E3'}
-      : {};
 
     return (
       <TouchableOpacity
         style={[
           styles.lightTextBtn,
           shadowStyle,
-          {backgroundColor, paddingHorizontal, height},
+          { backgroundColor, paddingHorizontal, height },
           borderRounded,
         ]}
         {...rest}>
@@ -161,7 +162,7 @@ const Button: React.FC<ButtonProps> = ({
     );
   } else {
     return (
-      <TouchableOpacity style={[styles.button, {borderRadius}]} {...rest}>
+      <TouchableOpacity style={[styles.button, { borderRadius: rounded ? styles.button.borderRadius : 0 }]} {...rest}>
         <Text style={[styles.text, textStyle]}>{title}</Text>
       </TouchableOpacity>
     );
